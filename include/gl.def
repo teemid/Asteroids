@@ -1,0 +1,7 @@
+#ifndef GL_FUNC
+#define GL_FUNC(type, name)
+#endif
+
+GL_FUNC(PFNGLCLEARBUFFERFVPROC, glClearBufferfv)
+
+#undef GL_FUNC
