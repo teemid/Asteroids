@@ -1,2 +1,4 @@
-# Asteroids
-An asteroid clone (WIP)
+Asteroids
+=========
+
+Asteroids for Windows programmed from the ground up.
