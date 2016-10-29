@@ -1,5 +1,7 @@
 @echo off
 
+call get_compiler.bat
+
 if exist build goto compile
 
 mkdir build
@@ -18,3 +20,5 @@ mkdir build
     link %LINKER_FLAGS% %LIB_FILES% *.obj
 
     POPD
+
+    echo "Finished!"
