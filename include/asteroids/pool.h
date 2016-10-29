@@ -6,7 +6,7 @@
 
 namespace asteroids
 {
-    template<typename T>
+    template<typename T, UInt32 N>
     class Pool
     {
     public:
@@ -19,38 +19,29 @@ namespace asteroids
         T * begin (void);
         T * end (void);
     private:
-        T * elements;
+        T elements[N];
         Size capacity;
     };
 
-    template<typename T>
-    Pool<T>::Pool (void)
-    {
-        T * elements = ALLOCATE(T, sizeof(T) * (size_t)capacity);
-    }
+    template<typename T, UInt32 N>
+    Pool<T, N>::Pool (void) : capacity(N) { }
 
-    template<typename T>
-    Pool<T>::Pool (Size initial_capacity)
-    {
-        T * elements = ALLOCATE(T, sizeof(T) * (size_t)initial_capacity);
-    }
-
-    template<typename T>
-    T * Pool<T>::Get (void)
+    template<typename T, UInt32 N>
+    T * Pool<T, N>::Get (void)
     {
 
     }
 
-    template<typename T>
-    T * Pool<T>::begin (void)
+    template<typename T, UInt32 N>
+    T * Pool<T, N>::begin (void)
     {
         return elements;
     }
 
-    template<typename T>
-    T * Pool<T>::end (void)
+    template<typename T, UInt32 N>
+    T * Pool<T, N>::end (void)
     {
-        return elements + capacity;
+        return elements + N;
     }
 }
 

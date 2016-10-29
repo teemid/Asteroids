@@ -9,7 +9,7 @@ namespace asteroids
         state.player.position = Vector2f(100.0f, 100.0f);
         state.player.velocity = Vector2f(0.0f, 0.0f);
 
-        state.asteroids = Pool<Asteroid>(20);
+        state.asteroids = Pool<Asteroid, 20>();
 
         state.score = 0;
     }

@@ -23,7 +23,7 @@ namespace asteroids
     struct GameState
     {
         Player player;
-        Pool<Asteroid> asteroids;
+        Pool<Asteroid, 20> asteroids;
         Real32 score;
     };
 
