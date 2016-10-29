@@ -1,8 +1,8 @@
 #ifndef ASTEROIDS_VECTOR2_H
 #define ASTEROIDS_VECTOR2_H
 
-#include "asteriods/types.h"
-#include "asteriods/math.h"
+#include "asteroids/types.h"
+#include "asteroids/math.h"
 
 namespace asteroids
 {
@@ -12,11 +12,11 @@ namespace asteroids
         {
             Real32 data[2];
             struct { Real32 x, y; };
-        }
+        };
 
-        Vector2f (void);
-        Vector2f (Real32 x);
-        Vector2f (Real32 x, Real32 y);
+        Vector2f (void) : x(0.0f), y(0.0f) { };
+        Vector2f (Real32 x) : x(x), y(x) { };
+        Vector2f (Real32 x, Real32 y) : x(x), y(y) { };
 
         inline Vector2f operator +(const Vector2f & rhs);
         inline Vector2f operator -(const Vector2f & rhs);
@@ -46,7 +46,7 @@ namespace asteroids
     inline Vector2f Vector2f::operator *(const Real32 & scalar) { return Vector2f(x * scalar, y * scalar); }
     inline Vector2f Vector2f::operator /(const Real32 & scalar) { return Vector2f(x / scalar, y / scalar); }
 
-    inline Bool32 operator ==(const Vector2f & rhs) { return (x == rhs.x && y == rhs.y); }
+    inline Bool32 Vector2f::operator ==(const Vector2f & rhs) { return (x == rhs.x && y == rhs.y); }
 
     inline Vector2f Normalize (Vector2f & v)
     {
