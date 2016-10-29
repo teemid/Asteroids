@@ -3,8 +3,9 @@
 #endif
 #include <Windows.h>
 
-#include "platform/window.h"
+#include "asteroids/game.h"
 #include "platform/opengl.h"
+#include "platform/window.h"
 #include "platform/win32/assert.h"
 #include "platform/win32/platforminfo.h"
 
@@ -48,11 +49,7 @@ int CALLBACK WinMain (HINSTANCE instance, HINSTANCE, LPSTR lpCmdLine, int nCmdSh
         0
     );
 
-    if (!info.windowHandle)
-    {
-        printf("Failed to create window.\n");
-        exit(1);
-    }
+    Assert(info.windowHandle, "Failed to create window.\n");
 
     info.deviceContext = GetDC(info.windowHandle);
     platform::opengl::CreateContext(&info, 3, 2);
@@ -87,9 +84,12 @@ int CALLBACK WinMain (HINSTANCE instance, HINSTANCE, LPSTR lpCmdLine, int nCmdSh
             }
         }
 
-        float color[] = { 0.0f, 0.0f, 0.0f };
+        asteroids::Update(0.0f);
 
+        static float color[] = { 0.0f, 0.0f, 0.0f };
         glClearBufferfv(GL_COLOR_BUFFER_BIT, 0, color);
+
+        asteroids::Draw();
 
         platform::opengl::SwapBuffers(&info);
     }
