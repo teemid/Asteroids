@@ -9,6 +9,8 @@
 #include "platform/win32/assert.h"
 #include "platform/win32/platforminfo.h"
 
+#include "asteroids/OpenGL/opengl.h"
+
 
 static platform::Window window = {
     "Asteroids",
@@ -59,9 +61,9 @@ int CALLBACK WinMain (HINSTANCE instance, HINSTANCE, LPSTR lpCmdLine, int nCmdSh
 
     ShowWindow(info.windowHandle, nCmdShow);
 
-    asteroids::Initialize();
-
     bool running = true;
+
+    asteroids::Initialize();
 
     while (running)
     {

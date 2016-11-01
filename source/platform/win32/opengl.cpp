@@ -1,7 +1,10 @@
 #include "platform/opengl.h"
 
 #include <cstring>
+
+#include "asteroids/opengl/opengl.h"
 #include "gl/wglext.h"
+
 
 #include "platform/win32/assert.h"
 #include "platform/win32/platforminfo.h"

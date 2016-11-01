@@ -1,11 +1,6 @@
 #ifndef PLATFORM_OPENGL_H
 #define PLATFORM_OPENGL_H
 
-#include "gl/glcorearb.h"
-
-#define GL_FUNC(type, name) extern type name;
-#include "gl.def"
-
 namespace platform
 {
     struct PlatformInfo;
