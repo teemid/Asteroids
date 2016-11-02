@@ -1,19 +1,21 @@
-#ifndef ASTEROIDS_OPENGL_RENDERER_H
-#define ASTEROIDS_OPENGL_RENDERER_H
+#include "asteroids/OpenGL/renderer.h"
+#include "platform/opengl.h"
 
-#include "asteroids/renderer.h"
 
 namespace asteroids
 {
-    OpenGLRenderer::OpenGLRenderer (void)
+    OpenGLRenderer::OpenGLRenderer (platform::PlatformInfo * info)
     {
-
+        platform::opengl::CreateContext(info, 3, 3);
     }
 
     OpenGLRenderer::~OpenGLRenderer (void)
     {
         
     }
-}
 
-#endif
+    void OpenGLRenderer::Render (void)
+    {
+
+    }
+}

@@ -1,16 +1,22 @@
 #ifndef ASTEROIDS_RENDERER
 #define ASTEROIDS_RENDERER
 
+namespace platform
+{
+    struct PlatformInfo;
+}
+
 namespace asteroids
 {
     class Renderer
     {
     public:
-        Renderer(void);
-        virtual ~Renderer(void);
+        virtual ~Renderer (void) = 0;
 
-        void Render(void);
+        virtual void Render(void) = 0;
     };
+
+    inline Renderer::~Renderer (void) { }
 }
 
 #endif

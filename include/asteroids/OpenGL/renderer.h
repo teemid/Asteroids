@@ -3,13 +3,14 @@
 
 #include "asteroids/renderer.h"
 
+
 namespace asteroids
 {
     class OpenGLRenderer : public Renderer
     {
     public:
-        OpenGLRenderer (void);
-        ~OpenGLRenderer (void);
+        OpenGLRenderer (platform::PlatformInfo * info);
+        virtual ~OpenGLRenderer (void) final;
 
         void Render (void);
     };
